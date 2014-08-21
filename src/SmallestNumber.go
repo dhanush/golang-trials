@@ -4,6 +4,16 @@ import (
 	"fmt"
 )
 
+func smallest(x[] int) int {
+	small:= x[0]
+	for _, value := range x {
+		if value < small {
+			small = value
+		}
+	}
+	return small;
+}
+
 func main() {
 
 	x := []int{
@@ -12,20 +22,8 @@ func main() {
 		37, 34, 83, 27,
 		19, 97, 9, 17,
 	}
-	small:= x[0];
-	
-	for  i:=1;i<len(x); i++ {
-		if x[i] < small {
-			small = x[i]
-		}
-	}
-	fmt.Println("Smallest Number is ",small);
-	
-	for _, value:= range x {
-		if value < small {
-			small = value
-		}
-	}
-	
-	fmt.Println("Smallest Number is ",small);
+	small := smallest(x)
+
+	fmt.Println("Smallest Number is ", small)
+
 }
