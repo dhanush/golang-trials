@@ -24,7 +24,13 @@ func (c *Circle) area() float64 {
 	return math.Pi * c.r * c.r
 }
 
-
+func totalArea (shapes ...Shape) float64 {
+	var area float64
+	for _, shape:= range shapes {
+		area+=shape.area()
+	}
+	return area
+}
 func main() {
 
 	c:=Circle {0,0,8}
@@ -32,6 +38,8 @@ func main() {
 
 	s:=Square{10}
 	fmt.Println("Area of Square ", s.area())
+
+	fmt.Println("Total Area ",  totalArea(&c,&s))
 }
 
 
