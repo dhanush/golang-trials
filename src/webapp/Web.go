@@ -18,10 +18,11 @@ var products [] Product
 
 
 func ProductsHandler( w http.ResponseWriter, r *http.Request) {
-        //fmt.Fprintf(w, "<h1>Our Products </h1>")
+	w.Header().Set("Content-Type","text/html")
         productsJson, _ := json.Marshal(products)
         fmt.Fprintf(w,"<h4>" +string(productsJson)+"</h4>")
         fmt.Fprintf(w,"<br/> <a href=\"/\">Home</a>")
+	
 }
 
 func AddProductHandler(w http.ResponseWriter, r *http.Request) {
