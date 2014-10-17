@@ -4,14 +4,14 @@ import (
 	"fmt"
 )
 
-func smallest(x[] int) int {
-	small:= x[0]
+func smallest(x []int) int {
+	small := x[0]
 	for _, value := range x {
 		if value < small {
 			small = value
 		}
 	}
-	return small;
+	return small
 }
 
 func main() {
